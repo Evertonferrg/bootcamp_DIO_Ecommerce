@@ -1,8 +1,13 @@
 package br.com.dio.storefront.config;
 
+<<<<<<< HEAD
 
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.OpenAPI;
+=======
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
+>>>>>>> dd08b0b (Commit inicial do projeto storefront)
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

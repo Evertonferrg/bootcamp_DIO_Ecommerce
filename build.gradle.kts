@@ -33,7 +33,11 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.mapstruct:mapstruct:$mapStructVersion")
+<<<<<<< HEAD
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.4")
+=======
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.13")
+>>>>>>> dd08b0b (Commit inicial do projeto storefront)
 
 	compileOnly("org.projectlombok:lombok")
 
@@ -63,7 +67,11 @@ tasks.named("build") {
 }
 
 tasks.named<JavaExec>("bootRun"){
+<<<<<<< HEAD
 	jvmArgs = listOf("-Xrunjdwp:tranport=dt_socket,server=y,suspend=n,address=*:5005")
+=======
+	jvmArgs = listOf("-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=*:5005")
+>>>>>>> dd08b0b (Commit inicial do projeto storefront)
 }
 
 tasks.withType<Test> {

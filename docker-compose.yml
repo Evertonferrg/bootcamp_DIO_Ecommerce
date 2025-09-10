@@ -9,7 +9,11 @@ services:
       - "8081:8081"
       - "5006:5005"
     volumes:
+<<<<<<< HEAD
       - .:/storefront:Z
+=======
+      - .:/storefront:z
+>>>>>>> dd08b0b (Commit inicial do projeto storefront)
     networks:
       - ecommerce-net
 networks:

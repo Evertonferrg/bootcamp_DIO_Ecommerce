@@ -1,4 +1,11 @@
 package br.com.dio.storefront.controller.request;
 
-public record ProductSaveRequest() {
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.UUID;
+
+public record ProductSaveRequest(
+        @JsonProperty("id") UUID id,
+        @JsonProperty("name")String name
+) {
 }

@@ -1,28 +1,56 @@
 package br.com.dio.storefront.controller;
 
+import br.com.dio.storefront.controller.request.ProductSaveRequest;
+import br.com.dio.storefront.controller.response.ProductAvailableResponse;
+import br.com.dio.storefront.controller.response.ProductDetailResponse;
+import br.com.dio.storefront.controller.response.ProductSaveResponse;
+import br.com.dio.storefront.mapper.IProductMapper;
+import br.com.dio.storefront.service.IProductService;
 import lombok.AllArgsConstructor;
-<<<<<<< HEAD
-import lombok.extern.java.Log;
-=======
 
->>>>>>> dd08b0b (Commit inicial do projeto storefront)
-import lombok.extern.log4j.Log4j2;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.UUID;
+
+import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.NO_CONTENT;
 
 @RestController
 @RequestMapping("products")
 @AllArgsConstructor
-@Log4j2
 public class ProductController {
 
-    @GetMapping("test")
-    void test(){
-        log.info("test");
-<<<<<<< HEAD
+    private final IProductService service;
+    private final IProductMapper mapper;
 
-=======
->>>>>>> dd08b0b (Commit inicial do projeto storefront)
+    @PostMapping
+    @ResponseStatus(CREATED)
+    ProductSaveResponse create(@RequestBody final ProductSaveRequest request){
+        var entity = mapper.toEntity(request);
+        entity = service.save(entity);
+        return mapper.toResponse(entity);
     }
+
+    @PostMapping("{id}/purchase")
+    @ResponseStatus(NO_CONTENT)
+    void purchase(@PathVariable final UUID id){
+        service.purchase(id);
+    }
+
+    @GetMapping
+    List<ProductAvailableResponse> listAvailable(){
+        var entities = service.findAllActive();
+        return mapper.toResponse(entities);
+    }
+
+    @GetMapping("{id}")
+    ProductDetailResponse findById(@PathVariable final UUID id){
+        var dto = service.findInfo(id);
+        return mapper.toResponse(dto);
+    }
+
+
 }

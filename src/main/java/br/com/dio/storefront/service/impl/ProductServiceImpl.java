@@ -1,6 +1,6 @@
 package br.com.dio.storefront.service.impl;
 
-import br.com.dio.storefront.dto.ProductDetailsDTO;
+import br.com.dio.storefront.dto.ProductDetailDTO;
 import br.com.dio.storefront.dto.ProductInfoDTO;
 import br.com.dio.storefront.entity.ProductEntity;
 import br.com.dio.storefront.mapper.IProductMapper;
@@ -59,7 +59,7 @@ public class ProductServiceImpl implements IProductService {
         var dto = warehouseClient.get()
                 .uri("/products/" + id)
                 .retrieve()
-                .body(ProductDetailsDTO.class);
+                .body(ProductDetailDTO.class);
         return dto.price();
     }
 

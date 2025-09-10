@@ -8,6 +8,5 @@ public record ProductInfoDTO(
         UUID id,
         String name,
         BigDecimal price
-
 ) {
 }

@@ -1,0 +1,11 @@
+# Ignorar pastas do Gradle
+.gradle
+build
+
+# Ignorar arquivos do IDE
+.idea
+*.iml
+
+# Ignorar arquivos do sistema ou backup
+.DS_Store
+Thumbs.db

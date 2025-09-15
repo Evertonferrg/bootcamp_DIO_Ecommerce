@@ -10,6 +10,7 @@ services:
       - "5006:5005"
     volumes:
       - .:/storefront:Z
+
     networks:
       - ecommerce-net
 networks:

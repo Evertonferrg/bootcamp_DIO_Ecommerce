@@ -34,9 +34,12 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.mapstruct:mapstruct:$mapStructVersion")
 
+
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.4")
 
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.13")
+
+	implementation ("org.springframework.boot:spring-boot-starter-actuator")
 
 
 	compileOnly("org.projectlombok:lombok")
